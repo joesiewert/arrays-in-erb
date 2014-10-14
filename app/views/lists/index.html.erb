@@ -1,7 +1,38 @@
+<% states=["Wisconsin", "Minnesota", "New York", "Colorado"] %>
+<% cities=["Wausau", "Minneapolis", "NYC", "Denver", "Boulder"] %>
+
+<% statecity=[
+  ["WI", "Wausau"],
+  ["MN", "Minneapolis"],
+  ["NY", "NYC"],
+  ["CO", "Denver", "Boulder"]
+] %>
+
 <h2>States</h2>
 
-<p>Put your code here...</p>
+<% states.each do |state| %>
+  <ul>
+    <li><%= state %></li>
+  </ul>
+<% end %>
 
 <h2>Cities</h2>
 
-<p>Put your code here...</p>
+<% cities.each do |city| %>
+  <ul>
+    <li><%= city %></li>
+  </ul>
+<% end %>
+
+<h2>Cities and States</h2>
+
+<% statecity.each do |sc| %>
+  <ul>
+    <li><%= sc[0] %></li>
+      <% sc.drop(1).each do |c| %>
+        <ul>
+          <li><%= c %></li>
+        </ul>
+      <% end %>
+  </ul>
+<% end %>
